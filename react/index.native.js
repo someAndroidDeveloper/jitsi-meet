@@ -8,12 +8,17 @@ import 'react-native-gesture-handler';
 import 'react-native-get-random-values';
 import './features/mobile/polyfills';
 
+//fix for not working buttons
+import { UIManager } from 'react-native';
+
 import React, { PureComponent } from 'react';
 import { AppRegistry } from 'react-native';
 
 import { App } from './features/app/components';
 import { _initLogging } from './features/base/logging/functions';
 import JitsiThemePaperProvider from './features/base/ui/components/JitsiThemeProvider';
+
+UIManager.playTouchSound = () => { }
 
 /**
  * The type of the React {@code Component} props of {@link Root}.
